@@ -1,0 +1,136 @@
+#zone-entete {
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: $largeur-menu;
+  z-index: 1002;
+  background-color: $entete-bg;
+  box-shadow: $box-shadow;
+
+  .contenu-entete {
+    height: $hauteur-entete;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+
+
+  .btn-navigation {
+    font-size: 16px;
+    box-shadow: none;
+  }
+
+  .dropdown-header {
+    padding: 10px 15px;
+    margin-bottom: 0;
+    font-size: 12px;
+    white-space: nowrap;
+    color:$couleur-entete-zone-menu-deroulant;
+    background-color: $entete-zone-menu-deroulant-bg;
+  }
+
+  .dropdown-item {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px 15px;
+    border: 0;
+    color: $couleur-zone-menu-deroulant;
+    font-size: 14px;
+  }
+
+  .dropdown-menu {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-shadow: 0 4px 5px 0 $couleur-ombre-zone-menu-deroulant,
+      0 1px 10px 0 $couleur-ombre-zone-menu-deroulant,
+      0 2px 4px -1px $couleur-ombre-zone-menu-deroulant;
+  }
+
+  .dropdown-divider {
+    margin: 0;
+  }
+
+  #zone-notification{
+    width: 2.2rem;
+
+    .dropdown-menu.dropdown-menu-right {
+      right: 0;
+      left: auto !important;
+    }
+    > a{
+      &::after{
+        display: none;
+      }
+    }
+    i{
+      font-size: 1.5rem;
+      position: relative;
+    }
+    .badge{
+      position: absolute;
+      right: 4px;
+      top: -4px;
+    }
+
+  }
+
+  #zone-utilisateur{
+
+    .dropdown-menu.dropdown-menu-right{
+      right: 1px;
+    }
+    > a{
+      display: block;
+      min-width: 170px;
+      &::after{
+        display: none;
+      }
+
+      &:hover,
+      &:active,
+      &:visited {
+        text-decoration: none;
+   }
+    }
+    .info-utilisateur {
+      position: relative;
+
+      img {
+        width: 55px;
+        height: 55px;
+        border-radius: 50em;
+      }
+
+      .titre {
+        font-size: 14px;
+        color:$couleur-titre-entete;
+        font-weight: 600;
+        margin-bottom: 2px;
+      }
+      .sous-titre {
+        font-size: 13px;
+        color:$couleur-sous-titre-entete;
+        margin-bottom: 0;
+      }
+    }
+
+    .icone-profil{
+      width: 18px;
+      font-size: 17px;
+      margin-bottom: 2px;
+    }
+    .icone-deconnexion{
+      width: 18px;
+      margin-top: 1px;
+      font-size:20px;
+    }
+
+  }
+}

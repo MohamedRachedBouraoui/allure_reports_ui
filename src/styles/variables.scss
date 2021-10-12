@@ -1,0 +1,186 @@
+// variables bootstrap
+$body-bg:                   #ebedef;
+$body-color:                #3c4b64;
+$font-size-base:            0.875rem;
+$font-size-lg:              $font-size-base * 1.25;
+$font-size-sm:              $font-size-base * .875;
+$font-weight-lighter:       lighter;
+$font-weight-light:         300;
+$font-weight-normal:        400;
+$font-weight-bold:          600;
+$font-weight-bolder:        bolder;
+
+$transition-collapse: height 1s ease !default;
+
+$input-btn-focus-box-shadow:  0 0 0 0.2rem rgba(50,31,219,.25);
+
+$font-weight-base:            $font-weight-normal;
+$line-height-base:            1.5;
+
+$h1-font-size:                $font-size-base * 2.5;
+$h2-font-size:                $font-size-base * 2;
+$h3-font-size:                $font-size-base * 1.75;
+$h4-font-size:                $font-size-base * 1.5;
+$h5-font-size:                $font-size-base * 1.25;
+$h6-font-size:                $font-size-base;
+
+
+$theme-colors: (
+  primary:    #321fdb,
+  secondary:  #00a3de,
+  success:    #2eb85c,
+  info:       #17a2b8,
+  warning:    #f9b115,
+  danger:     #e55353,
+  light:      #ebedef,
+  dark:       #636f83
+);
+
+$link-color:                              #321fdb;
+$link-decoration:                         none;
+$link-hover-color:                        #321fdb;
+$link-hover-decoration:                   underline;
+
+$custom-file-text: (
+  en: "Browse",
+  fr: "Choisir"
+);
+
+
+// Forms
+
+$label-margin-bottom:                   .5rem;
+$input-color:                           #5c6873;
+$input-border-color:                    #e4e7ea;
+$input-border-width:                    1px;
+$input-box-shadow:                      inset 0 1px 1px rgba($black, .075);
+
+/*$input-focus-bg:                        $input-bg;
+$input-focus-border-color:              $input-border-color;
+$input-focus-color:                     $input-color;
+$input-focus-width:                     $input-border-width;*/
+$input-focus-box-shadow:                $input-btn-focus-box-shadow;
+
+$input-transition:                      border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+
+// Pagination
+$pagination-color:                  #321fdb;
+$pagination-bg:                     $white;
+$pagination-active-color:           $white;
+$pagination-active-bg:              #321fdb;
+$pagination-focus-box-shadow:       $input-btn-focus-box-shadow;
+$pagination-focus-outline:          0;
+
+
+
+// Cards
+$card-spacer-y:                     .45rem;
+$card-spacer-x:                     1.25rem;
+$card-border-width:                 1px;
+$card-border-radius:                $border-radius;
+$card-border-color:                 #d8dbe0;
+$card-bg:                           $white;
+$card-cap-bg:                       $white;
+
+
+// variables
+
+$couleur-orange: #fda135;
+// zone auth
+$auth-bg: #ffffff;
+$couleur-ombre-auth-1: rgba(17, 149, 244, 0.02);
+$couleur-ombre-auth-2: rgba(17, 149, 244, 0.12);
+$ombre-profil:0 5px 15px rgba(17, 149, 244, 0.02),
+              0 3px 6px rgba(17, 149, 244, 0.12);
+
+// zone menu
+$menu-bg: #3c4b64;
+$menu-bg-active :rgba(0,0,0,.2);
+$menu-bg-hover :#321fdb;
+$sous-menu-bg-active :rgba(255,255,255,.05);
+$couleur-menu: rgba(255,255,255,.8);
+$couleur-sous-menu:rgba(255,255,255,.6);
+$couleur-sous-menu-icone:  rgba(255,255,255,.8);
+$couleur-sous-menu-survoler: #ffffff;
+$couleur-sous-menu-active: #ffffff;
+$largeur-menu:  256px;
+$logo-bg: #303c54;
+$pied-menu-bg: rgba(0, 0, 21, 0.2);
+$hauteur-pied-menu: 50px;
+
+// zone entete
+$hauteur-entete: 60px;
+$entete-bg: #ffffff;
+$couleur-entete: #555b6d;
+$couleur-titre-entete: #060606;
+$couleur-sous-titre-entete: #585858;
+
+// zone menu deroulant
+$entete-zone-menu-deroulant-bg: #ebedef;
+$couleur-entete-zone-menu-deroulant: #8a93a2;
+$couleur-zone-menu-deroulant: #4f5d73;
+$couleur-ombre-zone-menu-deroulant: rgba(60, 75, 100, 0.14);
+
+// zone titre page
+$hauteur-zone-page: 30px;
+$titre-page-bg: #ffffff;
+$couleur-titre-active : #8a93a2;
+$couleur-bordure-titre-page: #d8dbe0;
+$couleur-ombre-titre-page-1: rgba(60, 75, 100, 0.14);
+$couleur-ombre-titre-page-2: rgba(60, 75, 100, 0.12);
+$couleur-ombre-titre-page-3: rgba(60, 75, 100, 0.2);
+
+// Modal
+$modal-entete-bg: #ebedef;
+$couleur-modal-entete: #8a93a2;
+$couleur-btn-fermer-entete: #8a93a2;
+
+// Notification
+$couleur-notif-succes: #51A351;
+$couleur-notif-erreur: #BD362F;
+$couleur-notif-info: #00a3de;
+$couleur-notif: #ffffff;
+$couleur-ombre-notif: rgba(17, 149, 244, 0.02);
+
+// Alert
+$couleur-alert-erreur: #e55353;
+$couleur-alert-info: #00a3de;
+$couleur-alert-warning: #f9b115;
+$couleur-alert: #ffffff;
+$btn-annuler-alert-bg: #e55353;
+
+
+// Grille
+$couleur-btn-grille: #ffffff;
+
+
+// Selection
+$couleur-selectionne: rgba(0,0,0,.15);
+
+// instruction
+$couleur-sous-titre-instruction:#2EB8A1;
+
+// algorithme
+$border-radius-rectangle: 15px;
+
+@mixin border-radius($value) {
+  border-radius: $value;
+ -moz-border-radius: $value ;
+  -webkit-border-radius: $value;
+}
+
+@mixin animation() {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+@function theme-color($key: "primary") {
+  @return map-get($theme-colors, $key);
+}
+
+
+
+

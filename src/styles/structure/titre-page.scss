@@ -1,0 +1,19 @@
+#zone-titre-page {
+  background: $titre-page-bg;
+  border-top: 1px solid #d8dbe0;
+  box-shadow: 0 2px 2px 0 $couleur-ombre-titre-page-1,
+    0 3px 1px -2px $couleur-ombre-titre-page-2,
+    0 1px 5px 0 $couleur-ombre-titre-page-2;
+
+  ol {
+    background: $titre-page-bg;
+
+    li:last-child a{
+      color: $couleur-titre-active;
+      text-decoration: none;
+
+    }
+  }
+
+
+}

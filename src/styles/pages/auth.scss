@@ -1,0 +1,26 @@
+
+
+#allure-zone-auth {
+  box-shadow: 0 5px 15px $couleur-ombre-auth-1,
+              0 3px 6px $couleur-ombre-auth-2;
+  border: none;
+  background-color: $auth-bg;
+  min-height: 200px;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5%;
+  padding: 20px;
+  position: relative;
+
+  > div {
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 13px;
+  }
+}
+
+.connexion-office365 {
+  margin: auto;
+  margin-top: 30px;
+}

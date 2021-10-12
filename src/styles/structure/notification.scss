@@ -1,0 +1,129 @@
+
+.swal2-container {
+  /*.swal2-modal {
+    border-radius: 0;
+  }*/
+  .swal2-icon-error {
+    border: 2px solid $couleur-alert-erreur;
+  }
+  .swal2-icon.swal2-error {
+    border-color: $couleur-alert-erreur;
+    color: $couleur-alert-erreur;
+  }
+  .swal2-icon.swal2-error [class^="swal2-x-mark-line"] {
+    background: $couleur-alert-erreur;
+  }
+
+  .swal2-icon-warning {
+    border: 2px solid $couleur-alert-warning;
+  }
+  .swal2-icon.swal2-warning {
+    border-color: $couleur-alert-warning;
+    color: $couleur-alert-warning;
+  }
+
+  .swal2-icon-info {
+    border: 2px solid $couleur-notif-info;
+  }
+  .swal2-icon.swal2-info {
+    border-color: $couleur-notif-info;
+    color: $couleur-notif-info;
+  }
+
+  .swal2-confirm,
+  .swal2-cancel {
+    box-shadow: 0 0;
+    color: $couleur-alert;
+    width: 120px;
+    margin-right: 5px;
+  }
+  .swal2-cancel {
+    background-color: $btn-annuler-alert-bg;
+    border-color: $btn-annuler-alert-bg;
+  }
+
+  .swal2-icon-warning .swal2-confirm {
+    background-color: $couleur-alert-warning;
+    border-color: $couleur-alert-warning;
+  }
+
+  .swal2-icon-error .swal2-confirm {
+    background-color: $couleur-alert-erreur;
+    border-color: $couleur-alert-erreur;
+  }
+
+  .swal2-icon-info .swal2-confirm {
+    background-color: $couleur-alert-info;
+    border-color: $couleur-alert-info;
+  }
+
+  .allure-alert-imp-effectuer-operation{
+
+    .swal2-title{
+      font-size: 25px;
+    }
+  }
+}
+
+.toast {
+  border-radius: 0;
+}
+.toast-body {
+  padding: 0;
+}
+
+.allure-notification {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  border: 0;
+  z-index: 1100;
+  color: $couleur-notif;
+  box-shadow: 0 0 6px $couleur-ombre-notif;
+
+  .allure-msg-notification {
+    display: table;
+    position: relative;
+    transition: all 0.2s ease;
+  }
+
+  .allure-icone-notification {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 25px 10px 25px 20px;
+    text-align: center;
+
+    > i {
+      font-size: 30px;
+      width: 40px;
+    }
+  }
+
+  .allure-contenu-notification {
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 15px 0 10px;
+
+    h5 {
+      padding: 10px 0px 5px;
+      margin: 0;
+      font-size: 12px;
+    }
+    p {
+      padding-left: 1px;
+      font-size: 12px;
+    }
+  }
+}
+
+.allure-notification-succes {
+  background-color: $couleur-notif-succes;
+}
+
+.allure-notification-erreur {
+  background-color: $couleur-notif-erreur;
+}
+
+.allure-notification-info {
+  background-color: $couleur-notif-info;
+}

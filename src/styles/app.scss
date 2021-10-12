@@ -1,0 +1,28 @@
+
+@import "~font-awesome/css/font-awesome.min.css";
+@import "~sweetalert2/src/sweetalert2.scss";
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "variables.scss";
+@import "~bootstrap/scss/bootstrap";
+
+
+
+// fonts
+@import "fonts/fonts.scss";
+// Structure
+@import "structure/general.scss";
+@import "structure/chargement.scss";
+@import "structure/entete.scss";
+@import "structure/titre-page.scss";
+@import "structure/notification.scss";
+@import "structure/modal.scss";
+// Pages
+@import "pages/auth.scss";
+
+// Responsive
+@import "responsive/responsive.scss";
