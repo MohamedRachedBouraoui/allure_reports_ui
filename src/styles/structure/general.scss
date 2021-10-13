@@ -120,6 +120,7 @@ th {
 }
 
 .ng-select{
+  width: 100%;
   &.ng-select-disabled>.ng-select-container{
     background-color: $input-disabled-bg;
   }
@@ -453,6 +454,10 @@ a.allure-titre-menu{
  width: 100%;
 }
 
+.recherche-projets{
+  padding-top: 10px;
+  min-width: 700px;
+}
 
 
 

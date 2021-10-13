@@ -22,6 +22,10 @@ export class ApiService {
     }
   }
 
+  recuperePrefixApi():string{
+    return this.apiEndpoint;
+  }
+
   get<T>(url: string): Observable<T> {
     return this.httpClient.get<T>(this.apiEndpoint + url);
   }

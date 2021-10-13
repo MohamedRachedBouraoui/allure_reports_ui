@@ -14,6 +14,7 @@ import { AppConfig } from './app-config';
 import { AllureHttpIntercepteurInterceptor } from '@allure/noyeau/intercepteurs/allure-http-intercepteur.interceptor';
 
 
+
 export function initialiserApp(appConfig: AppConfig) {
   return () => appConfig.recupererConfig();
 }
@@ -28,6 +29,7 @@ export function HttpLoaderFactory(httpBackend: HttpBackend) {
     AppComponent
   ],
   imports: [
+
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
