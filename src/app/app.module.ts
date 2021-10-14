@@ -12,7 +12,8 @@ import { HttpBackend, HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@a
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AppConfig } from './app-config';
 import { AllureHttpIntercepteurInterceptor } from '@allure/noyeau/intercepteurs/allure-http-intercepteur.interceptor';
-
+import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
+import { initializeKeycloak } from './init/keycloak-init.factory';
 
 
 export function initialiserApp(appConfig: AppConfig) {
@@ -34,7 +35,7 @@ export function HttpLoaderFactory(httpBackend: HttpBackend) {
     HttpClientModule,
     AppRoutingModule,
     NgbModule,
-
+    KeycloakAngularModule,
 
     TranslateModule.forRoot({
       defaultLanguage: 'fr',
@@ -59,8 +60,12 @@ export function HttpLoaderFactory(httpBackend: HttpBackend) {
       provide: HTTP_INTERCEPTORS,
       useClass: AllureHttpIntercepteurInterceptor,
       multi: true
+    },{
+      provide: APP_INITIALIZER,
+      useFactory: initializeKeycloak,
+      multi: true,
+      deps: [KeycloakService],
     }
-
   ],
   bootstrap: [AppComponent]
 })
