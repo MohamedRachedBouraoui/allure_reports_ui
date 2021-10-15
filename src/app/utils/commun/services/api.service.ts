@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AppConfig } from 'src/app/app-config';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -17,9 +18,8 @@ export class ApiService {
   };
 
   constructor(private httpClient: HttpClient) {
-    if (AppConfig.parametres) {
-      this.apiEndpoint = AppConfig.parametres.apiEndpoint;
-    }
+
+    this.apiEndpoint = environment.apiEndpoint;
   }
 
   recuperePrefixApi():string{

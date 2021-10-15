@@ -452,6 +452,16 @@ a.allure-titre-menu{
 
   height: calc(100vh - 70px);
  width: 100%;
+
+ .allure-contenaire-vide.card{
+
+  width: 750px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  font-size: 26px;
+  font-weight: 200;
+ }
 }
 
 .recherche-projets{

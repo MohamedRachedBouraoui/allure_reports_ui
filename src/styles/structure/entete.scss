@@ -7,6 +7,18 @@
   background-color: $entete-bg;
   box-shadow: $box-shadow;
 
+  .titre-logo{
+    min-width: 200px;
+    text-align: center;
+    padding-top: 2px;
+    font-size: 45px;
+    font-weight: 700;
+    color: #095797;
+  }
+  .label-combobox{
+    font-size: 17px;
+    font-weight: 500;
+  }
   .contenu-entete {
     height: $hauteur-entete;
     display: flex;
@@ -100,7 +112,10 @@
    }
     }
     .info-utilisateur {
+      cursor: pointer;
+      text-decoration: underline;
       position: relative;
+      min-height: 55px;
 
       img {
         width: 55px;
@@ -109,13 +124,13 @@
       }
 
       .titre {
-        font-size: 14px;
+        font-size: 16px;
         color:$couleur-titre-entete;
         font-weight: 600;
         margin-bottom: 2px;
       }
       .sous-titre {
-        font-size: 13px;
+        font-size: 15px;
         color:$couleur-sous-titre-entete;
         margin-bottom: 0;
       }

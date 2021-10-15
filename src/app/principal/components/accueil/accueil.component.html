@@ -1,18 +1,21 @@
 <header id="zone-entete">
   <div class="contenu-entete">
-    <div class="d-flex h-100"></div>
+    <div class="d-flex h-100">
+      <h4 class="titre-logo">SQIN</h4>
+
+    </div>
 
     <div class="d-flex h-100">
 
       <form [formGroup]="formRecherche" class="w-100">
         <div class="row col-md-12 recherche-projets w-100">
-          <div class="col-md-1 pt-1">
-            <label for="nomProjet">
+          <div class="col-md-1 pt-1 px-0">
+            <label for="nomProjet" class="label-combobox">
               Projet
             </label>
           </div>
 
-          <div class="col-md-5">
+          <div class="col-md-7">
             <ng-select classes="form-control form-control-sm" [items]="listeProjets" bindLabel="nom" bindValue="nom"
               [multiple]="false" formControlName="nomProjet" appendTo="body"
               notFoundText="{{'commun.TEXTE_NON_TROUVE' | translate}}"
@@ -21,11 +24,11 @@
 
           </div>
 
-          <div class=" col-md-1 pt-1">
-            <label for="version"> Version </label>
+          <div class=" col-md-1 pt-1 px-0">
+            <label for="version" class="label-combobox"> Version </label>
           </div>
 
-          <div class=" col-md-5">
+          <div class=" col-md-3">
 
             <ng-select classes="form-control form-control-sm" [items]="listeVersions" bindLabel="version"
               bindValue="version" [multiple]="false" formControlName="version" appendTo="body"
@@ -47,26 +50,20 @@
       <div id="zone-utilisateur" ngbDropdown class="pr-1">
         <a role="button" ngbDropdownToggle>
 
-          <div class="media info-utilisateur">
-            <div>
-              <img [src]="imageUtilisateur" onError="this.src='./assets/images/utilisateur.png'" />
-            </div>
+          <div class="media info-utilisateur pt-1">
             <div class="media-body text-truncate">
-              <h6 class="mt-2 titre text-truncate">{{nomUtilisateur}}</h6>
+              <h6 class="mt-2 titre text-truncate">Bonjour {{nomUtilisateur}}</h6>
               <p class="sous-titre text-truncate">{{roleUtilisateur}}</p>
             </div>
           </div>
-
         </a>
 
         <div class="dropdown-menu dropdown-menu-right" ngbDropdownMenu>
 
-
           <div class="dropdown-divider"></div>
-
-          <a (click)="deconnexion()" class="dropdown-item" translate>
-            <i class="fa fa-sign-out mr-1 icone-deconnexion"></i>
-            commun.DECONNEXION
+          <a (click)="deconnexion()" class="dropdown-item">
+            <em class="fa fa-sign-out mr-1 icone-deconnexion"></em>
+            DECONNEXION
           </a>
         </div>
       </div>
@@ -76,6 +73,16 @@
 
 </header>
 
+<!-- <iframe [src]="url|safeUrl" width="100%" height="100%" title="demo" (load)="injectCustomHttpInterceptorHook()" -->
 <div class="allure-contenaire">
-  <iframe [src]="url|safeUrl"  width="100%" height="100%" title="demo"></iframe>
+  <iframe [src]="url|safeUrl" width="100%" height="100%" title="reports_iframe"
+    id="my-iframe" #iframeObj
+    *ngIf="show"></iframe>
+    <div class="d-flex align-items-center h-100 w-100" *ngIf="!show">
+    <div class="allure-contenaire-vide card" >
+        <div class="card-body">
+          Veuillez sélectionner un projet
+        </div>
+    </div>
+  </div>
 </div>

@@ -1,9 +1,9 @@
 import { Projet } from '@allure/principal/models/projet';
 import { VersionProjet } from '@allure/principal/models/version-projet';
 import { ProjetService } from '@allure/principal/services/projet.service';
-import { Component, OnInit, SecurityContext } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { KeycloakService } from 'keycloak-angular';
 
 @Component({
   selector: 'app-accueil',
@@ -11,7 +11,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   styleUrls: ['./accueil.component.scss']
 })
 export class AccueilComponent implements OnInit {
-
+  @ViewChild('iframeObj', {static: false}) iframeObj: ElementRef | undefined;
 
   nomUtilisateur: string;
   roleUtilisateur: string;
@@ -21,12 +21,16 @@ export class AccueilComponent implements OnInit {
   listeProjets: Projet[] = [];
   listeVersions: VersionProjet[] = [];
 
-  url: string='';
+  url: string = '';
   //afficherIframe = this.;
+  show = false;
 
-  constructor(private formBuilder: FormBuilder, private projetService: ProjetService, public sanitizer: DomSanitizer) {
-    this.nomUtilisateur = "Rached";
-    this.roleUtilisateur = "Admin";
+  constructor(private formBuilder: FormBuilder,
+    private projetService: ProjetService,
+    private keycloakService: KeycloakService) {
+
+    this.nomUtilisateur = '';
+    this.roleUtilisateur = '';
     this.imageUtilisateur = "";
 
     this.formRecherche = this.formBuilder.group({
@@ -37,11 +41,30 @@ export class AccueilComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.nomUtilisateur = this.keycloakService.getUsername();
     this.projetService.recupererListeProjets().subscribe((projets: Projet[]) => {
       this.listeProjets = projets
     });
 
 
+  }
+
+  injectCustomHttpInterceptorHook():void {
+
+    if(this.iframeObj ==null){
+      return;
+    }
+
+    let iframeWindow = (this.iframeObj.nativeElement.contentWindow || this.iframeObj.nativeElement.contentDocument);
+    let xhrObj =iframeWindow.XMLHttpRequest.prototype.open;
+    var parentObj = this;
+    iframeWindow.XMLHttpRequest.prototype.open = function () {
+        this.addEventListener('load', function() {
+                console.log('load...: ');
+        });
+        xhrObj.apply(this, arguments);
+        this.setRequestHeader('Authorization', "Bearer " + this.keycloakService.getToken());
+    }
   }
 
   changerProjet() {
@@ -68,8 +91,7 @@ export class AccueilComponent implements OnInit {
 
       let version = this.listeVersions.find(x => x.version == this.formRecherche.value.version);
       if (version?.url) {
-
-        this.url =this.projetService.recuperePrefixApi() + '/' + version.url;
+        this.url = this.projetService.recuperePrefixApi() + '/' + version.url;
       } else {
         this.url = '';
       }
@@ -77,11 +99,13 @@ export class AccueilComponent implements OnInit {
     } else {
       this.url = '';
     }
+    this.show = this.url!='';
   }
   afficherIFrame(): boolean {
     return this.url !== '';
   }
   deconnexion(): void {
+    this.keycloakService.logout();
 
   }
 

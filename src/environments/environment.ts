@@ -1,9 +1,17 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-
+declare global {
+  interface Window { EnvVar: any; }
+}
+window.EnvVar = window.EnvVar || {};
 export const environment = {
-  production: false
+  production: window.EnvVar["productionMode"],
+  apiEndpoint: window.EnvVar["apiEndpoint"],
+  keycloackAuthUrl: window.EnvVar["keycloackAuthUrl"],
+  keycloackRealm: window.EnvVar["keycloackRealm"],
+  keycloackClientId: window.EnvVar["keycloackClientId"],
+  debug: window.EnvVar["debug"] || false
 };
 
 /*

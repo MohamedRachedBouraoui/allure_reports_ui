@@ -4,6 +4,7 @@ import { NavigationHautComponent } from './components/navigation-haut/navigation
 import { TranslateModule } from '@ngx-translate/core';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -17,6 +18,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     TranslateModule,
     NgSelectModule,
+    NgbModule,
+
   ],
   exports:[
     NavigationHautComponent,
@@ -24,6 +27,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NgSelectModule,
     FormsModule,
     ReactiveFormsModule,
+    NgbModule,
+
   ]
 })
 export class CommunModule { }
