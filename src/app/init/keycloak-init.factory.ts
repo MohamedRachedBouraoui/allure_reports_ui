@@ -2,15 +2,16 @@ import { KeycloakService } from "keycloak-angular";
 import { environment } from 'src/environments/environment';
 
 
-export function initializeKeycloak(keycloak: KeycloakService):()=>Promise<boolean> {
+export function initializeKeycloak(keycloak: KeycloakService): () => Promise<boolean> {
+
   return () =>
     keycloak.init({
       config: {
         url: environment.keycloackAuthUrl,
         realm: environment.keycloackRealm,
-        clientId:environment.keycloackClientId,
+        clientId: environment.keycloackClientId,
       },
-      loadUserProfileAtStartUp:true,
+      loadUserProfileAtStartUp: true,
       initOptions: {
         onLoad: 'check-sso',
         checkLoginIframe: true

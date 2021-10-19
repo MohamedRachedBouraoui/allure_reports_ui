@@ -7,6 +7,7 @@ declare global {
 window.EnvVar = window.EnvVar || {};
 export const environment = {
   production: window.EnvVar["productionMode"],
+  securiserUi: window.EnvVar["securiserUi"],
   apiEndpoint: window.EnvVar["apiEndpoint"],
   keycloackAuthUrl: window.EnvVar["keycloackAuthUrl"],
   keycloackRealm: window.EnvVar["keycloackRealm"],

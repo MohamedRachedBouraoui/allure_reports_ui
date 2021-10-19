@@ -18,14 +18,17 @@ CMD ["/bin/sh",  "-c",  "envsubst < /usr/share/nginx/html/assets/env.template.js
 
 docker run --env API_ENDPOINT="https://demo-api.myapp.com" my-container:latest
  */
-(function(window) {
+(function (window) {
   window["EnvVar"] = window["EnvVar"] || {};
 
   // Environment variables
-  window.EnvVar["productionMode"] = false;
-  window.EnvVar["apiEndpoint"] = "http://localhost:5000";
-  window.EnvVar["keycloackAuthUrl"] ='http://localhost:8080/auth';
-  window.EnvVar["keycloackRealm"] ='Demo-Realm';
-  window.EnvVar["keycloackClientId"] ='allure-ui';
-  window.EnvVar["debug"]  = "";
+  window.EnvVar["productionMode"] = "COMES_FROM_ENV_PATH";
+  window.EnvVar["securiserUi"] = "COMES_FROM_ENV_PATH";
+  window.EnvVar["apiEndpointPrefix"] = "COMES_FROM_ENV_PATH";
+  window.EnvVar["apiEndpoint"] = "COMES_FROM_ENV_PATH";
+  window.EnvVar["uiEndpointPrefix"] = "COMES_FROM_ENV_PATH";
+  window.EnvVar["keycloackAuthUrl"] = "COMES_FROM_ENV_PATH";
+  window.EnvVar["keycloackRealm"] = "COMES_FROM_ENV_PATH";
+  window.EnvVar["keycloackClientId"] = "COMES_FROM_ENV_PATH";
+  window.EnvVar["debug"] = "COMES_FROM_ENV_PATH";
 })(this);

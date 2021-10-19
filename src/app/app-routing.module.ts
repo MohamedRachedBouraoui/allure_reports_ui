@@ -6,9 +6,10 @@ import { AccueilComponent } from './principal/components/accueil/accueil.compone
 import { AuthGuard } from './utils/auth/auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: `/${AllureRoutes.ACCUEIL}`, pathMatch: 'full'},
+  { path: '', redirectTo: `/${AllureRoutes.ACCUEIL}`, pathMatch: 'full' },
   { path: AllureRoutes.AUTH, component: AuthentificationComponent },
-  { path: AllureRoutes.ACCUEIL, component: AccueilComponent,canActivate:[AuthGuard]}
+  { path: AllureRoutes.ACCUEIL, component: AccueilComponent, canActivate: [AuthGuard] }
+  //  { path: AllureRoutes.ACCUEIL, component: AccueilComponent}
 ];
 
 @NgModule({

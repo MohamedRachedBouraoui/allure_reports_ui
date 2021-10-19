@@ -1,4 +1,4 @@
-import { APP_INITIALIZER, ErrorHandler, NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -56,11 +56,12 @@ export function HttpLoaderFactory(httpBackend: HttpBackend) {
       provide: APP_INITIALIZER,
       useFactory: initialiserApp,
       deps: [AppConfig], multi: true
-    },{
+    }, {
       provide: HTTP_INTERCEPTORS,
       useClass: AllureHttpIntercepteurInterceptor,
       multi: true
-    },{
+    },
+     {
       provide: APP_INITIALIZER,
       useFactory: initializeKeycloak,
       multi: true,

@@ -22,10 +22,13 @@ docker run --env API_ENDPOINT="https://demo-api.myapp.com" my-container:latest
   window["EnvVar"] = window["EnvVar"] || {};
 
   // Environment variables
-  window.EnvVar["productionMode"] = "${PRODUCTION_MODE}";
-  window.EnvVar["apiEndpoint"] = "${API_ENDPOINT}";
-  window.EnvVar["keycloackAuthUrl"] ="${KEYCLOACK_AUTH_URL}";
-  window.EnvVar["keycloackRealm"]  ="${KEYCLOACK_REALM}";
-  window.EnvVar["keycloackClientId"]  ="${KEYCLOACK_CLIENT_ID}";
-  window.EnvVar["debug"]  = "${DEBUG}";
+  window.EnvVar["productionMode"] = "${PRODUCTION_MODE}" ||true;
+  window.EnvVar["securiserUi"] =  "${SECURISER_UI}" ||true;
+  window.EnvVar["apiEndpointPrefix"] = "${API_ENDPOINT_PREFIX}" ||"/api";
+  window.EnvVar["apiEndpoint"] = "${API_ENDPOINT}"+ "${API_ENDPOINT_PREFIX}"  || "http://localhost:5000"+ window.EnvVar["apiEndpointPrefix"] ;
+  window.EnvVar["uiEndpointPrefix"] = "${UI_ENDPOINT_PREFIX}" ||"/ui";
+  window.EnvVar["keycloackAuthUrl"] ="${KEYCLOACK_AUTH_URL}" || 'http://localhost:8080/auth';
+  window.EnvVar["keycloackRealm"]  ="${KEYCLOACK_REALM}" || 'allure_realm';
+  window.EnvVar["keycloackClientId"]  ="${KEYCLOACK_CLIENT_ID}" || 'allure-ui';
+  window.EnvVar["debug"]  = "${DEBUG}" || false;
 })(this);
